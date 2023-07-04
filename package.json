@@ -13,6 +13,7 @@
     "expo-router": "^1.2.0",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
@@ -24,7 +25,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.6",
-    "@babel/plugin-proposal-export-namespace-from": "^7.18.9"
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@types/react": "^18.2.14",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.1.6"
   },
   "resolutions": {
     "metro": "^0.73.7",
