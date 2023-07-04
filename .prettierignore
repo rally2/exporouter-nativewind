@@ -1,0 +1,13 @@
+*.spec.js
+*.integration.js
+*.html
+dist/**
+*.graphql
+.next
+.github
+node_modules
+build
+coverage
+logs
+.nyc_output
+.vscode
