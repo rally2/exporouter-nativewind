@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "expo-nativewind",
-    "slug": "expo-nativewind"
+    "slug": "expo-nativewind",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
