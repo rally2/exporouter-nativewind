@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start:tunnel": "npx expo start -c --host tunnel --scheme appdev",
+    "dev:client": "npx expo start -c --dev-client --scheme routerwindlocal",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
