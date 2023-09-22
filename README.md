@@ -1,6 +1,15 @@
-# Expo Router Example
+# Template Walkthrough
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+## Main Components:
+
+- Expo Router V2 via Expo Managed Workflow (Expo SDK 49)
+- Nativewind (TailwindCSS for React Native)
+- Pnpm (package manager)
+
+## Opinionated Template
+
+This template does make certain opinionated decisions.  They are based on common project decisions I've come accross while building Expo apps in Production.
+
 
 ## 🚀 How to use
 

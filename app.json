@@ -6,8 +6,9 @@
     },
     "name": "expo-nativewind",
     "slug": "expo-nativewind",
-    "plugins": [
-      "expo-router"
-    ]
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }
