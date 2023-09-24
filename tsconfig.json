@@ -1,28 +1,11 @@
 {
   "compilerOptions": {
     "jsx": "react-native",
-    "types": [
-      "nativewind/types",
-      "node"
-    ],
+    "types": ["nativewind/types", "node"],
     "target": "es2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "checkJs": true,
-    "skipLibCheck": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "incremental": true,
+    "strictNullChecks": true,
     "noUncheckedIndexedAccess": true
   },
   "include": [
@@ -32,10 +15,9 @@
     "app.config.ts",
     "index.ts",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "declarations.d.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }

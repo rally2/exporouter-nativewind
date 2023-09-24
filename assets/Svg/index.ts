@@ -1,7 +1,7 @@
 import Headphones from './headphones.svg';
 
-const Svg = {
+const SVG = {
   Headphones: Headphones
 };
 
-export default Svg;
+export default SVG;

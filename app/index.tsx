@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import Svg from '../assets/Svg';
+import SVG from '../assets/svg';
 
 export default function Page() {
   return (
@@ -7,7 +7,10 @@ export default function Page() {
       <View className={'flex flex-grow justify-center max-w-screen-lg mx-auto'}>
         <Text className={'text-6xl font-bold'}>Hello World</Text>
         <Text className="text-4xl">This is the first page of your app.</Text>
-        <Svg.Headphones height={50} width={50} />
+        <View className="flex-row justify-center items-center my-2">
+          <Text className="text-xl">Using an SVG:</Text>
+          <SVG.Headphones className="mx-4" height={25} width={25} />
+        </View>
       </View>
     </View>
   );
