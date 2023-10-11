@@ -11,6 +11,7 @@
   "dependencies": {
     "expo": "^49.0.11",
     "expo-constants": "~14.4.2",
+    "expo-dev-client": "~2.4.11",
     "expo-linking": "~5.0.2",
     "expo-router": "^2.0.8",
     "expo-splash-screen": "~0.20.5",
