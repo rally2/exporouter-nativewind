@@ -5,24 +5,20 @@
     "types": ["nativewind/types", "node"],
     "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "checkJs": true,
-    "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "incremental": true,
-    "noUncheckedIndexedAccess": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true
   },
-  "include": ["app", "expo-plugins", "src", "app.config.ts", "index.ts", "components"],
+  "include": [
+    "app",
+    "expo-plugins",
+    "src",
+    "app.config.ts",
+    "index.ts",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "declarations.d.ts",
+    "components"
+  ],
   "exclude": ["node_modules"]
 }

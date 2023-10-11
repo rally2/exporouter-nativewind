@@ -1,5 +1,6 @@
 import DemoPathAliasText from '@/components/atoms/DemoPathAliasText';
 import { Text, View } from 'react-native';
+import SVG from '../assets/svg';
 
 export default function Page() {
   return (
@@ -8,6 +9,10 @@ export default function Page() {
         <Text className={'text-6xl font-bold'}>Hello World</Text>
         <Text className="text-4xl">This is the first page of your app.</Text>
         <DemoPathAliasText />
+        <View className="flex-row justify-center items-center my-2">
+          <Text className="text-xl">Using an SVG:</Text>
+          <SVG.Headphones className="mx-4" height={25} width={25} />
+        </View>
       </View>
     </View>
   );
