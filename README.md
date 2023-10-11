@@ -1,5 +1,9 @@
 # Template Walkthrough
 
+## Getting Started:
+
+// TODO:
+
 ## Main Components:
 
 - Expo Router V2 via Expo Managed Workflow (Expo SDK 49)
@@ -33,13 +37,17 @@ You can additionally create `.env.*` for your own purposes. To switch between en
 
 ### File Aliasing:
 
-// TODO:
+This project has path aliases configured. To extend aliasing capability further, you can change the `tsconfig.json`:
+
+```
+    "paths": {
+      "@/*": ["./*"]
+    }
+```
+
+The above is configured to alias for any folder in the root of the project. See `app/index.tsx` importing `components/atoms/DemoPathAliasText` as an example. This may seem trivial in this project due to its relatively flat structure, but it really shines as the project grows in size.
 
 ## 🚀 How to use
-
-```sh
-npx create-expo-app -e with-router
-```
 
 ## 📝 Notes
 
