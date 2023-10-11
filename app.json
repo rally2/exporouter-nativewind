@@ -6,9 +6,29 @@
     },
     "name": "expo-nativewind",
     "slug": "expo-nativewind",
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router"
+    ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c5cdbb3e-9ece-452e-9691-fbc5ae4aff5b"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.rally2shane.exporouterwind"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c5cdbb3e-9ece-452e-9691-fbc5ae4aff5b"
+    },
+    "android": {}
   }
 }
