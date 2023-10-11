@@ -1,3 +1,4 @@
+import DemoPathAliasText from '@/components/atoms/DemoPathAliasText';
 import { Text, View } from 'react-native';
 
 export default function Page() {
@@ -6,6 +7,7 @@ export default function Page() {
       <View className={'flex flex-grow justify-center max-w-screen-lg mx-auto'}>
         <Text className={'text-6xl font-bold'}>Hello World</Text>
         <Text className="text-4xl">This is the first page of your app.</Text>
+        <DemoPathAliasText />
       </View>
     </View>
   );
