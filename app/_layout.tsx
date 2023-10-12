@@ -22,16 +22,8 @@ export default function RootLayout() {
           <Text className="text-xl">Using an SVG:</Text>
           <SVG.Headphones className="mx-4" height={25} width={25} />
         </View>
-        <Text className="my-4" style={styles.customFont}>
-          RaceSport Custom Font Used
-        </Text>
+        <Text className="my-4 font-racesport text-center">RaceSport Custom Font</Text>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  customFont: {
-    fontFamily: 'racesport-regular'
-  }
-});

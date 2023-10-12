@@ -7,7 +7,12 @@ module.exports = {
     './hooks/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        // Example custom font.  Requires custom font to be loaded via expo-font.  See useCachedResources.ts and README.md.
+        racesport: ['racesport-regular']
+      }
+    }
   },
   plugins: []
 };
