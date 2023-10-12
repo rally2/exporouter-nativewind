@@ -51,6 +51,12 @@ The above is configured to alias for any folder in the root of the project. See 
 
 `useCachedResources.ts` is configured to load custom fonts that are located in the `assets/fonts` folder.
 
+See `tailwind.config.js` for the `fontFamily` configuration. You can then see it used in action via `font-racesport`:
+
+```
+<Text className="my-4 font-racesport text-center">RaceSport Custom Font</Text>
+```
+
 ### Dark Mode Configuration:
 
 // TODO:
