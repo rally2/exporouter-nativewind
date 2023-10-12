@@ -14,6 +14,9 @@ dependencies:
   expo-dev-client:
     specifier: ~2.4.11
     version: 2.4.11(expo@49.0.6)
+  expo-font:
+    specifier: ~11.4.0
+    version: 11.4.0(expo@49.0.6)
   expo-linking:
     specifier: ~5.0.2
     version: 5.0.2(expo@49.0.6)
