@@ -47,6 +47,14 @@ This project has path aliases configured. To extend aliasing capability further,
 
 The above is configured to alias for any folder in the root of the project. See `app/index.tsx` importing `components/atoms/DemoPathAliasText` as an example. This may seem trivial in this project due to its relatively flat structure, but it really shines as the project grows in size.
 
+### Custom Fonts:
+
+`useCachedResources.ts` is configured to load custom fonts that are located in the `assets/fonts` folder.
+
+### Dark Mode Configuration:
+
+// TODO:
+
 ## 🚀 How to use
 
 ## 📝 Notes
