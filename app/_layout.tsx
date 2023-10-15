@@ -2,7 +2,7 @@ import SVG from '@/assets/svg';
 import DemoPathAliasText from '@/components/atoms/DemoPathAliasText';
 import useCachedResources from '@/hooks/useCachedResources';
 import { SplashScreen } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
