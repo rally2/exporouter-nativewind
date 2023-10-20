@@ -31,9 +31,11 @@ The project is using Experimental Typed Routes Support. See [Expo Router: Typed 
 
 ### Environment Variables:
 
-Environment files are loaded automatically Post-Expo SDK 49. See `.env` for base example.
+Environment files are loaded automatically Post-Expo SDK 49. See `.env.example` for base example.
 
 You can additionally create `.env.*` for your own purposes. To switch between environment files used you can leverage `NODE_ENV=* ...` in your `package.json` script that is used to start the development server.
+
+To make environment variables accessible using `process.env.*` syntax, you will need to append `EXPO_PUBLIC_` to each variable.  See https://docs.expo.dev/guides/environment-variables/ for more info.
 
 ### File Aliasing:
 
