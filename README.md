@@ -35,7 +35,7 @@ Environment files are loaded automatically Post-Expo SDK 49. See `.env.example` 
 
 You can additionally create `.env.*` for your own purposes. To switch between environment files used you can leverage `NODE_ENV=* ...` in your `package.json` script that is used to start the development server.
 
-To make environment variables accessible using `process.env.*` syntax, you will need to append `EXPO_PUBLIC_` to each variable.  See https://docs.expo.dev/guides/environment-variables/ for more info.
+To make environment variables accessible using `process.env.*` syntax, you will need to append `EXPO_PUBLIC_` to each variable. See https://docs.expo.dev/guides/environment-variables/ for more info.
 
 ### File Aliasing:
 
@@ -62,6 +62,16 @@ See `tailwind.config.js` for the `fontFamily` configuration. You can then see it
 ### Dark Mode Configuration:
 
 // TODO:
+
+### Favorable Extensions:
+
+See `.vscode/extensions.json` for a list of recommended extensions.
+
+The most important to note is the Headwind extension for Tailwind / Nativewind.
+
+- It provides opinionated sorting of the Tailwind utlities for consistency in the codebase.
+  - See `.vscode/settings.json` for the `headwind.defaultSortOrder` configuration.
+  - For this Expo template it is vital that `dark:*` has been added to the end of the default sort order to ensure toggling dark mode is consistent. If the `dark:*` utility class is auto sorted before the defined `className` color scheme it will not work as expected.
 
 ## 🚀 How to use
 
