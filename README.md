@@ -72,3 +72,17 @@ The most important to note is the Headwind extension for Tailwind / Nativewind.
 - It provides opinionated sorting of the Tailwind utlities for consistency in the codebase.
   - See `.vscode/settings.json` for the `headwind.defaultSortOrder` configuration.
   - For this Expo template it is vital that `dark:*` has been added to the end of the default sort order to ensure toggling dark mode is consistent. If the `dark:*` utility class is auto sorted before the defined `className` color scheme it will not work as expected.
+
+## EAS
+
+### EAS Build
+
+// TODO:
+
+### EAS Submit
+
+// TODO:
+
+### EAS Updates:
+
+// TODO:
