@@ -1,8 +1,6 @@
-import SVG from '@/assets/svg';
-import DemoPathAliasText from '@/components/atoms/DemoPathAliasText';
+import ThemeProvider from '@/context/Theme';
 import useCachedResources from '@/hooks/useCachedResources';
-import { Link, Slot, SplashScreen } from 'expo-router';
-import { Text, View } from 'react-native';
+import { Slot, SplashScreen } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -15,7 +13,9 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
-      <Slot />
+      <ThemeProvider>
+        <Slot />
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 }

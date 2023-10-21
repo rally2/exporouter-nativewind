@@ -2,10 +2,10 @@ import { Text, View, SafeAreaView, Switch } from 'react-native';
 import { useState } from 'react';
 import { useColorScheme } from 'nativewind';
 import { useRouter } from 'expo-router';
+import { useTheme } from '@/context/Theme';
 
 export default function Theme() {
-  const { colorScheme, toggleColorScheme } = useColorScheme();
-  const [isDarkMode, setIsDarkMode] = useState(colorScheme === 'dark');
+  const { toggleTheme, isDarkMode, colorScheme } = useTheme();
   const router = useRouter();
 
   return (
@@ -24,18 +24,14 @@ export default function Theme() {
           </Text>
           <Switch
             className="mr-5"
-            onValueChange={() => {
-              if (colorScheme === 'dark') setIsDarkMode(false);
-              else setIsDarkMode(true);
-
-              toggleColorScheme();
-            }}
+            onValueChange={toggleTheme}
             value={isDarkMode}
             trackColor={{ false: '#767577', true: '#81b0ff' }}
           />
-          <Text className="text-lg">{colorScheme === 'dark' ? '🌙' : '🌞'}</Text>
+          <Text className="text-lg">{isDarkMode ? '🌙' : '🌞'}</Text>
         </View>
 
+        {/* TODO: Create a 'Pallette' component that is made up of 'Swatch' components showing the distinct colors in the Theme. */}
         <View className="flex-row flex-wrap items-center justify-center flex-1">
           <View className="flex items-center justify-center w-1/5 mx-5">
             <View className="flex w-full h-10 mx-2 my-2 rounded-full bg-brandPrimary dark:bg-brandPrimaryDark"></View>
@@ -44,7 +40,7 @@ export default function Theme() {
 
           <Text
             className="underline text-slate-900 dark:text-white"
-            onPress={() => router.push('/')}
+            onPress={() => router.push('/(auth)/')}
           >
             Back to Home
           </Text>

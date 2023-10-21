@@ -1,11 +1,13 @@
+import { SvgProps } from 'react-native-svg';
 import Headphones from './headphones.svg';
+import { StyledOptions, styled } from 'nativewind';
 
-const SVG = {
-  Headphones: Headphones
+const defaultSvgStyledProps: StyledOptions<SvgProps, keyof SvgProps, keyof SvgProps> = {
+  classProps: ['fill', 'stroke']
 };
 
-export const Test = () => {
-  
+const SVG = {
+  Headphones: styled(Headphones, defaultSvgStyledProps)
 };
 
 export default SVG;
