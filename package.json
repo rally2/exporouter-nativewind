@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "npx expo start -c",
+    "dev": "npx expo start -c --go",
     "dev:client": "npx expo start -c --dev-client --scheme routerwindlocal",
     "android": "expo start --android",
     "ios": "expo start --ios",
