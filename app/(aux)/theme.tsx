@@ -1,6 +1,4 @@
 import { Text, View, SafeAreaView, Switch } from 'react-native';
-import { useState } from 'react';
-import { useColorScheme } from 'nativewind';
 import { useRouter } from 'expo-router';
 import { useTheme } from '@/context/Theme';
 

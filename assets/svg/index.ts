@@ -6,8 +6,17 @@ const defaultSvgStyledProps: StyledOptions<SvgProps, keyof SvgProps, keyof SvgPr
   classProps: ['fill', 'stroke']
 };
 
+// Add SVG components here.
+// Key will dictate how to use the component i.e. <SVG.* /> where * is the key.
 const SVG = {
-  Headphones: styled(Headphones, defaultSvgStyledProps)
+  Headphones
 };
 
-export default SVG;
+// Don't touch.  This just converts the SVG object into a styled object so that you
+// can leverage the svg props with your tailwind utility classes.
+export default Object.fromEntries(
+  Object.entries(SVG).map(([key, SvgComponent]) => [
+    key,
+    styled(SvgComponent, defaultSvgStyledProps)
+  ])
+);
