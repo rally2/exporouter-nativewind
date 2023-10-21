@@ -10,13 +10,17 @@ const defaultSvgStyledProps: StyledOptions<SvgProps, keyof SvgProps, keyof SvgPr
 // Key will dictate how to use the component i.e. <SVG.* /> where * is the key.
 const SVG = {
   Headphones
+} as const;
+
+// Probably don't need to touch anything below this line
+type StyledSVGType = ReturnType<typeof styled<SvgProps, keyof SvgProps, keyof SvgProps>>;
+type SVGComponents = {
+  [K in keyof typeof SVG]: StyledSVGType;
 };
 
-// Don't touch.  This just converts the SVG object into a styled object so that you
-// can leverage the svg props with your tailwind utility classes.
 export default Object.fromEntries(
   Object.entries(SVG).map(([key, SvgComponent]) => [
-    key,
+    key as keyof typeof SVG,
     styled(SvgComponent, defaultSvgStyledProps)
-  ])
-);
+  ]) as [keyof typeof SVG, StyledSVGType][]
+) as SVGComponents;
