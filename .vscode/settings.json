@@ -4,6 +4,8 @@
     "titleBar.activeBackground": "#2827B4",
     "titleBar.activeForeground": "#FBFBFE"
   },
+  "headwind.runOnSave": true,
+  "headwind.removeDuplicates": true,
   "headwind.defaultSortOrder": [
     "container",
     "box-border",

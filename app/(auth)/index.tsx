@@ -2,18 +2,15 @@ import SVG from '@/assets/svg';
 import DemoPathAliasText from '@/components/atoms/DemoPathAliasText';
 import { useTheme } from '@/context/Theme';
 import { Link } from 'expo-router';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
 export default function Register() {
   const { isDarkMode } = useTheme();
 
   return (
-    <View className={'flex flex-1 items-center p-6 bg-background dark:bg-backgroundDark'}>
-      <View className={'flex flex-grow justify-center max-w-screen-lg mx-auto'}>
-        <Text className={'text-6xl font-bold text-lightText dark:text-darkText'}>Hello World</Text>
-        <Text className="text-4xl text-lightText dark:text-darkText">
-          This is the first page of your app.
-        </Text>
+    <View className={'flex flex-1 p-6 bg-background dark:bg-backgroundDark flex-col'}>
+      <View className={'flex flex-1 justify-center max-w-screen-lg items-center'}>
+        <Text className={'text-6xl font-bold text-lightText dark:text-darkText'}>Examples:</Text>
         <DemoPathAliasText />
         <View className="flex-row items-center justify-center my-2">
           <Text className="text-xl text-lightText dark:text-darkText">Using an SVG:</Text>
@@ -24,10 +21,16 @@ export default function Register() {
             fill={isDarkMode ? 'fill-darkText' : 'fill-lightText'}
           />
         </View>
-        <Text className="my-4 text-center font-racesport">RaceSport Custom Font</Text>
+        <Text className="my-4 text-center font-racesport text-lightText dark:text-darkText">
+          RaceSport Custom Font
+        </Text>
 
-        <Link className="" href="/theme">
-          Go to Theme
+        <Link className="absolute" href="/theme" asChild>
+          <TouchableOpacity className="bottom-0 w-full bg-lightText dark:bg-darkText">
+            <Text className="my-3 font-bold text-center text-darkText dark:text-lightText">
+              Go to Theme
+            </Text>
+          </TouchableOpacity>
         </Link>
       </View>
     </View>
