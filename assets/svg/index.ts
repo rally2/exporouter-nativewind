@@ -4,4 +4,8 @@ const SVG = {
   Headphones: Headphones
 };
 
+export const Test = () => {
+  
+};
+
 export default SVG;

@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -10,6 +12,17 @@ module.exports = {
       fontFamily: {
         // Example custom font.  Requires custom font to be loaded via expo-font.  See useCachedResources.ts and README.md.
         racesport: ['racesport-regular']
+      },
+      colors: {
+        // Works as expected
+        // e.g. bg-brandPrimary vs. dark:bg-brandPrimaryDark
+        brandPrimary: '#1DE083',
+
+        background: colors.gray[100],
+        backgroundDark: colors.slate[900],
+
+        lightText: '#000000',
+        darkText: '#FFFFFF'
       }
     }
   },
