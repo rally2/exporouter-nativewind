@@ -1,23 +1,20 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "jsx": "react-native",
-    "types": ["nativewind/types", "node"],
-    "target": "es2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
-    "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": true,
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": [
-    "app",
-    "expo-plugins",
-    "src",
-    "app.config.ts",
-    "index.ts",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts",
-    "declarations.d.ts"
-  ],
-  "exclude": ["node_modules"],
-  "extends": "expo/tsconfig.base"
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }

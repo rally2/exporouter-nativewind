@@ -1,19 +1,23 @@
 {
   "scripts": {
-    "dev": "npx expo start -c",
+    "dev": "npx expo start -c --go",
     "dev:client": "npx expo start -c --dev-client --scheme routerwindlocal",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "clean": "rm -rf node_modules && rm -rf pnpm-lock.yaml && pnpm install"
+    "clean": "rm -rf node_modules && rm -rf pnpm-lock.yaml",
+    "eas:build:develop:ios": "APP_ENV=development eas build --wait --platform=ios --profile=development"
   },
   "dependencies": {
-    "expo": "^49.0.11",
+    "expo": "^49.0.6",
     "expo-constants": "~14.4.2",
+    "expo-dev-client": "~2.4.11",
+    "expo-font": "~11.4.0",
     "expo-linking": "~5.0.2",
     "expo-router": "^2.0.8",
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
+    "expo-updates": "~0.18.16",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -27,9 +31,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.6",
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@types/react": "^18.2.22",
     "react-native-svg-transformer": "^1.1.0",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "3.3.2",
     "typescript": "^5.2.2"
   },
   "name": "expo-nativewind",

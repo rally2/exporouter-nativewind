@@ -1,5 +1,9 @@
 # Template Walkthrough
 
+## Getting Started:
+
+// TODO:
+
 ## Main Components:
 
 - Expo Router V2 via Expo Managed Workflow (Expo SDK 49)
@@ -27,21 +31,58 @@ The project is using Experimental Typed Routes Support. See [Expo Router: Typed 
 
 ### Environment Variables:
 
-Environment files are loaded automatically Post-Expo SDK 49. See `.env` for base example.
+Environment files are loaded automatically Post-Expo SDK 49. See `.env.example` for base example.
 
 You can additionally create `.env.*` for your own purposes. To switch between environment files used you can leverage `NODE_ENV=* ...` in your `package.json` script that is used to start the development server.
 
+To make environment variables accessible using `process.env.*` syntax, you will need to append `EXPO_PUBLIC_` to each variable. See https://docs.expo.dev/guides/environment-variables/ for more info.
+
 ### File Aliasing:
+
+This project has path aliases configured. To extend aliasing capability further, you can change the `tsconfig.json`:
+
+```
+    "paths": {
+      "@/*": ["./*"]
+    }
+```
+
+The above is configured to alias for any folder in the root of the project. See `app/index.tsx` importing `components/atoms/DemoPathAliasText` as an example. This may seem trivial in this project due to its relatively flat structure, but it really shines as the project grows in size.
+
+### Custom Fonts:
+
+`useCachedResources.ts` is configured to load custom fonts that are located in the `assets/fonts` folder.
+
+See `tailwind.config.js` for the `fontFamily` configuration. You can then see it used in action via `font-racesport`:
+
+```
+<Text className="my-4 font-racesport text-center">RaceSport Custom Font</Text>
+```
+
+### Dark Mode Configuration:
 
 // TODO:
 
-## 🚀 How to use
+### Favorable Extensions:
 
-```sh
-npx create-expo-app -e with-router
-```
+See `.vscode/extensions.json` for a list of recommended extensions.
 
-## 📝 Notes
+The most important to note is the Headwind extension for Tailwind / Nativewind.
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+- It provides opinionated sorting of the Tailwind utlities for consistency in the codebase.
+  - See `.vscode/settings.json` for the `headwind.defaultSortOrder` configuration.
+  - For this Expo template it is vital that `dark:*` has been added to the end of the default sort order to ensure toggling dark mode is consistent. If the `dark:*` utility class is auto sorted before the defined `className` color scheme it will not work as expected.
+
+## EAS (Expo Application Services)
+
+### EAS Build
+
+// TODO:
+
+### EAS Submit
+
+// TODO:
+
+### EAS Updates:
+
+// TODO:

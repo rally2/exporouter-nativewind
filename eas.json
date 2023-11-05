@@ -1,0 +1,17 @@
+{
+  "cli": {
+    "version": ">= 0.52.0",
+    "requireCommit": true
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "developmentClient": true,
+      "channel": "dev.expo49.v1.0.0",
+      "env": {
+        "APP_ENV": "development"
+      }
+    }
+  },
+  "submit": {}
+}
