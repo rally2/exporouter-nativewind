@@ -8,6 +8,10 @@ pnpm install
 
 Don't have `pnpm`? You can install easily with `npm install -g pnpm`.
 
+```
+pnpm dev
+```
+
 #### Using WSL2?
 
 Try running `npx expose-wsl@latest` in a terminal on your WSL instance. This circumvents all the hassle of network routing and port forwarding.
