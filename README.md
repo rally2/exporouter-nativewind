@@ -2,7 +2,18 @@
 
 ## Getting Started:
 
-// TODO:
+```
+pnpm install
+```
+
+Don't have `pnpm`? You can install easily with `npm install -g pnpm`.
+
+#### Using WSL2?
+
+Try running `npx expose-wsl@latest` in a terminal on your WSL instance. This circumvents all the hassle of network routing and port forwarding.
+
+After that, create a `.env.local` file and copy the contents of `.env.example`.
+Comment out `REACT_NATIVE_PACKAGER_HOSTNAME` and add your local IP address shown from `expose-wsl`.
 
 ## Main Components:
 
