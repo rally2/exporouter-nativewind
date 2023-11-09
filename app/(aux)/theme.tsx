@@ -1,14 +1,19 @@
 import { Text, View, SafeAreaView, Switch } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from '@/context/Theme';
+import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function Theme() {
   const { toggleTheme, isDarkMode, colorScheme } = useTheme();
   const router = useRouter();
+  const insets = useSafeAreaInsets();
 
   return (
     <>
-      <SafeAreaView className="flex-1 bg-background dark:bg-backgroundDark">
+      <View
+        className="flex-1 bg-background dark:bg-backgroundDark"
+        style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
+      >
         <View className="mx-5 mb-5">
           <Text className="mt-5 text-4xl text-slate-950 dark:text-white">Theme</Text>
           <Text className="mt-2 text-xl underline dark:text-gray-450 text-slate-400">
@@ -43,7 +48,7 @@ export default function Theme() {
             Back to Home
           </Text>
         </View>
-      </SafeAreaView>
+      </View>
     </>
   );
 }

@@ -7,6 +7,7 @@ module.exports = {
     './components/**/*.{js,jsx,ts,tsx}',
     './hooks/**/*.{js,jsx,ts,tsx}'
   ],
+  presets: [require('nativewind/preset')],
   theme: {
     extend: {
       fontFamily: {
@@ -17,7 +18,7 @@ module.exports = {
         // Works as expected
         // e.g. bg-brandPrimary vs. dark:bg-brandPrimaryDark
         brandPrimary: '#1DE083',
-
+        
         background: colors.gray[100],
         backgroundDark: colors.slate[900],
 

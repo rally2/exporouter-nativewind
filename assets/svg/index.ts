@@ -1,26 +1,27 @@
-import { SvgProps } from 'react-native-svg';
-import Headphones from './headphones.svg';
-import { StyledOptions, styled } from 'nativewind';
-
-const defaultSvgStyledProps: StyledOptions<SvgProps, keyof SvgProps, keyof SvgProps> = {
-  classProps: ['fill', 'stroke']
-};
+import Headphones from "./headphones.svg";
+import { cssInterop } from "nativewind";
 
 // Add SVG components here.
 // Key will dictate how to use the component i.e. <SVG.* /> where * is the key.
-const SVG = {
-  Headphones
+export const SVG = {
+  Headphones,
+  Headphones2: Headphones,
 } as const;
 
-// Probably don't need to touch anything below this line
-type StyledSVGType = ReturnType<typeof styled<SvgProps, keyof SvgProps, keyof SvgProps>>;
-type SVGComponents = {
-  [K in keyof typeof SVG]: StyledSVGType;
-};
+Object.values(SVG).forEach((svg) => {
+  // TODO: Figure out how to type this correctly
+  cssInterop(svg, {
+    className: {
+      target: "style",
+      nativeStyleToProp: {
+        width: true,
+        height: true,
+        stroke: true,
+        strokeWidth: true,
+        fill: true,
+      },
+    },
+  });
+});
 
-export default Object.fromEntries(
-  Object.entries(SVG).map(([key, SvgComponent]) => [
-    key as keyof typeof SVG,
-    styled(SvgComponent, defaultSvgStyledProps)
-  ]) as [keyof typeof SVG, StyledSVGType][]
-) as SVGComponents;
+export default SVG;

@@ -15,10 +15,9 @@ export default function Register() {
         <View className="flex-row items-center justify-center my-2">
           <Text className="text-xl text-lightText dark:text-darkText">Using an SVG:</Text>
           <SVG.Headphones
-            className="mx-4"
+            className="mx-4 fill-lightText dark:fill-darkText"
             height={25}
             width={25}
-            fill={isDarkMode ? 'fill-darkText' : 'fill-lightText'}
           />
         </View>
         <Text className="my-4 text-center font-racesport text-lightText dark:text-darkText">
