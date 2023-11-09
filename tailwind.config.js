@@ -5,7 +5,8 @@ module.exports = {
   content: [
     './app/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
-    './hooks/**/*.{js,jsx,ts,tsx}'
+    './hooks/**/*.{js,jsx,ts,tsx}',
+    './utils/**/*.{js,jsx,ts,tsx}'
   ],
   presets: [require('nativewind/preset')],
   theme: {
@@ -18,12 +19,12 @@ module.exports = {
         // Works as expected
         // e.g. bg-brandPrimary vs. dark:bg-brandPrimaryDark
         brandPrimary: '#1DE083',
-        
+
         background: colors.gray[100],
         backgroundDark: colors.slate[900],
 
-        lightText: '#000000',
-        darkText: '#FFFFFF'
+        lightTextTheme: '#000000',
+        darkTextTheme: '#FFFFFF'
       }
     }
   },

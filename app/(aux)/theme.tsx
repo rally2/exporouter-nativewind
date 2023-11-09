@@ -1,7 +1,8 @@
 import { Text, View, SafeAreaView, Switch } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from '@/context/Theme';
-import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import NativeSwitch from '@/components/atoms/Switch';
 
 export default function Theme() {
   const { toggleTheme, isDarkMode, colorScheme } = useTheme();
@@ -25,7 +26,7 @@ export default function Theme() {
           <Text className="mr-5 text-lg text-slate-900 dark:text-white">
             {colorScheme?.replace(/^\w/, (c) => c.toUpperCase())}
           </Text>
-          <Switch
+          <NativeSwitch
             className="mr-5"
             onValueChange={toggleTheme}
             value={isDarkMode}
