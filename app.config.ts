@@ -2,23 +2,14 @@
 import { ExpoConfig, ConfigContext } from '@expo/config';
 
 // This is the default configuration for local development
-export const ENV = {
-  APP_ENV: 'staging',
-  APP_DISPLAY_NAME: '(Staging) NativewindRouter Template',
-  APP_SCHEME: 'routerwindlocal',
-  APP_BUNDLE_ID: 'com.rally2shane.dev.exporouterwind',
-  ICON_PATH: './assets/icon.png',
-
-  APP_VERSION: '1.0.0',
-  BUILD_NUMBER: '1'
-};
+export const ENV = {};
 
 if (process.env.APP_ENV === 'production') {
   setupProductionEnvironment();
 } else if (process.env.APP_ENV === 'staging') {
   setupStagingEnvironment();
 } else {
-  // Development environemnt is configured by default
+  // Development environemnt is configured based on the .env file
 }
 
 // See https://docs.expo.dev/versions/latest/config/app/
@@ -26,15 +17,17 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   // Spreads static configuration from app.json if we want to seperate out and be more
   // explicit about what should / and should not change
   ...config,
-  name: ENV.APP_DISPLAY_NAME,
-  slug: 'expo-nativewind',
-  description: 'Expo Router Nativewind Template',
+  name: process.env.EXPO_PUBLIC_APP_DISPLAY_NAME || '(Local) RouterWind',
+  owner: 'rally2',
+  slug: 'routerwind',
+  description:
+    'Expo Router & Nativewind Template to quick project spin up.  Configured environments, EAS profiles & more!',
   privacy: 'hidden',
-  platforms: ['android', 'ios'],
-  scheme: ENV.APP_SCHEME,
-  version: ENV.APP_VERSION,
+  platforms: ['android', 'ios', 'web'],
+  scheme: process.env.EXPO_PUBLIC_SCHEME,
+  version: process.env.EXPO_PUBLIC_APP_VERSION,
   orientation: 'portrait',
-  icon: ENV.ICON_PATH,
+  icon: process.env.EXPO_PUBLIC_ICON_PATH,
   userInterfaceStyle: 'automatic',
   splash: {
     image: './assets/splash.png',
@@ -50,18 +43,17 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   assetBundlePatterns: ['**/*'],
   ios: {
-    bundleIdentifier: ENV.APP_BUNDLE_ID,
-    buildNumber: ENV.BUILD_NUMBER,
+    bundleIdentifier: process.env.EXPO_PUBLIC_BUNDLE_ID,
+    buildNumber: process.env.EXPO_PUBLIC_BUILD_NUMBER,
     supportsTablet: true
   },
   android: {
-    package: 'com.clubspike.scoreboard',
+    package: process.env.EXPO_PUBLIC_PACKAGE,
     adaptiveIcon: {
-      foregroundImage: ENV.APP_ENV
-        ? './assets/adaptive-icon.png'
-        : './assets/dev/adaptive-icon.png',
+      foregroundImage: process.env.EXPO_PUBLIC_FOREGROUND_IMAGE,
       backgroundColor: '#1F2937'
-    }
+    },
+    versionCode: parseInt(process.env.EXPO_PUBLIC_BUILD_NUMBER || '1')
   },
   web: {
     bundler: 'metro',
@@ -72,9 +64,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ...ENV,
     eas: {
       projectId: 'c5cdbb3e-9ece-452e-9691-fbc5ae4aff5b'
-    },
-    router: {
-      origin: true
     }
   },
   experiments: {
@@ -84,17 +73,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   plugins: ['expo-router']
 });
 
-function setupProductionEnvironment() {
-  // TODO: Add production configuration
-}
+// TODO: Potentially remove having leveraged .env files and eas.json instead
+function setupProductionEnvironment() {}
 
-function setupStagingEnvironment() {
-  ENV.APP_ENV = 'staging';
-  ENV.APP_DISPLAY_NAME = '(Staging) NativewindRouter Template';
-  ENV.APP_SCHEME = 'routerwindlocal';
-  ENV.APP_BUNDLE_ID = 'com.rally2shane.dev.exporouterwind';
-  ENV.ICON_PATH = './assets/icon.png';
-
-  ENV.APP_VERSION = '1.0.0';
-  ENV.BUILD_NUMBER = '1';
-}
+// TODO: Potentially remove having leveraged .env files and eas.json instead
+function setupStagingEnvironment() {}
