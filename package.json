@@ -6,7 +6,12 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "clean": "rm -rf node_modules && rm -rf package-lock.json",
-    "eas:build:develop:ios": "APP_ENV=development eas build --wait --platform=ios --profile=development"
+    "eas:build:develop:ios": "APP_ENV=development eas build --wait --platform=ios --profile=development",
+    "eas:build:develop:android": "APP_ENV=development eas build --wait --platform=ios --profile=development",
+    "eas:build:develop:all": "APP_ENV=development eas build --wait --platform=ios --profile=development",
+    "eas:build:staging:ios": "APP_ENV=staging eas build --wait --platform=ios --non-interactive --profile=staging --auto-submit-with-profile=staging --clear-cache",
+    "eas:build:staging:android": "APP_ENV=staging eas build --wait --platform=android --non-interactive --profile=staging --clear-cache",
+    "eas:build:staging:all": "APP_ENV=staging eas build --wait --platform=all --non-interactive --profile=staging --clear-cache"
   },
   "jest": {
     "preset": "jest-expo"
