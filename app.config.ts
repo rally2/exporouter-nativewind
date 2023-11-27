@@ -36,7 +36,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   updates: {
     fallbackToCacheTimeout: 3000,
-    url: 'https://u.expo.dev/c5cdbb3e-9ece-452e-9691-fbc5ae4aff5b'
+    url: 'https://u.expo.dev/343b7455-38e2-4f2d-b28e-cedbcbde87bd'
   },
   runtimeVersion: {
     policy: 'appVersion'
