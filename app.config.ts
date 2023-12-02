@@ -1,7 +1,7 @@
 // WARNING THIS ISN'T VERSIONED
 import { ExpoConfig, ConfigContext } from '@expo/config';
 
-// This is the default configuration for local development
+// TODO: May or May not remove.  Experimenting with l
 export const ENV = {};
 
 if (process.env.APP_ENV === 'production') {
