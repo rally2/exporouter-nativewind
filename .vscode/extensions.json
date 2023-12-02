@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "heybourn.headwind",
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
     "sifat.refresh-window",
