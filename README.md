@@ -76,7 +76,7 @@ See `tailwind.config.js` for the `fontFamily` configuration. You can then see it
 
 ### Dark Mode Configuration:
 
-// TODO:
+Dark Mode compatibility is already configured in this template.  See `context/Theme.tsx` for the Theme context configuration.  Go to `(aux)/theme.tsx` to see setup for switching between Light Theme & Dark Theme.  Nativewind handles most of the heavy lifting afterwards as long as you apply the corresponding `dark:*` utility class to your component `className` prop.
 
 ### Favorable Extensions:
 
