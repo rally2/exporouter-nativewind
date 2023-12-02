@@ -30,7 +30,7 @@
         "EXPO_PUBLIC_APP_DISPLAY_NAME": "(Staging) RouterWind",
         "EXPO_PUBLIC_PACKAGE": "com.rally2.routerwind.staging",
         // TODO: Update this with a staging version of the icon
-        "EXPO_PUBLIC_FOREGROUND_IMAGE": "./assets/dev/adaptive-icon.local.png",
+        "EXPO_PUBLIC_FOREGROUND_IMAGE": "./assets/staging/adaptive-icon.staging.png",
         "EXPO_PUBLIC_SCHEME": "routerwindstaging",
         "EXPO_PUBLIC_BUNDLE_ID": "com.rally2.routerwind.staging",
         "EXPO_PUBLIC_ICON_PATH": "./assets/staging/icon.staging.png",
@@ -47,7 +47,7 @@
         "EXPO_PUBLIC_APP_DISPLAY_NAME": "RouterWind",
         "EXPO_PUBLIC_PACKAGE": "com.rally2.routerwind",
         // TODO: Update this with a staging version of the icon
-        "EXPO_PUBLIC_FOREGROUND_IMAGE": "./assets/adaptive-icon.local.png",
+        "EXPO_PUBLIC_FOREGROUND_IMAGE": "./assets/adaptive-icon.png",
         "EXPO_PUBLIC_SCHEME": "routerwind",
         "EXPO_PUBLIC_BUNDLE_ID": "com.rally2.routerwind",
         "EXPO_PUBLIC_ICON_PATH": "./assets/icon.png",
