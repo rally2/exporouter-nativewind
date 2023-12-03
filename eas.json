@@ -57,5 +57,12 @@
       }
     }
   },
-  "submit": {}
+  "submit": {
+    "staging": {
+
+    },
+    "production": {
+      
+    }
+  }
 }
