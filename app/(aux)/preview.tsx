@@ -1,4 +1,3 @@
-import { useTheme } from '@/context/Theme';
 import { Link } from 'expo-router';
 import { Text, View, TouchableOpacity } from 'react-native';
 
@@ -11,15 +10,29 @@ export default function Preview() {
         </Text>
 
         {/* EAS Secrets accessed via process.env.*. */}
-        <Text className="underline text-lightTextTheme dark:text-darkTextTheme">Below were added as EAS Secrets:</Text>
-        <Text className="text-lightTextTheme dark:text-darkTextTheme">EXPO_PUBLIC_SECRET: {process.env.EXPO_PUBLIC_SECRET}</Text>
-        <Text className="text-lightTextTheme dark:text-darkTextTheme">SECRET: {process.env.SECRET}</Text>
+        <Text className="text-lightTextTheme underline dark:text-darkTextTheme">
+          Below were added as EAS Secrets:
+        </Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">
+          EXPO_PUBLIC_SECRET: {process.env.EXPO_PUBLIC_SECRET}
+        </Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">
+          SECRET: {process.env.SECRET}
+        </Text>
 
-        <Text className="underline text-lightTextTheme dark:text-darkTextTheme">Below from eas.json:</Text>
-        <Text className="text-lightTextTheme dark:text-darkTextTheme">EXPO_PUBLIC_APP_DISPLAY_NAME: {process.env.EXPO_PUBLIC_APP_DISPLAY_NAME}</Text>
+        <Text className="text-lightTextTheme underline dark:text-darkTextTheme">
+          Below from eas.json:
+        </Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">
+          EXPO_PUBLIC_APP_DISPLAY_NAME: {process.env.EXPO_PUBLIC_APP_DISPLAY_NAME}
+        </Text>
 
-        <Text className="underline text-lightTextTheme dark:text-darkTextTheme">Below accessed through "Constants.expoConfig?.extra" & "app.config.ts":</Text>
-        <Text className="text-lightTextTheme dark:text-darkTextTheme">DYNAMIC_CONFIG_ENV_VAR: {process.env.DYNAMIC_CONFIG_ENV_VAR}</Text>
+        <Text className="text-lightTextTheme underline dark:text-darkTextTheme">
+          Below accessed through "Constants.expoConfig?.extra" & "app.config.ts":
+        </Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">
+          DYNAMIC_CONFIG_ENV_VAR: {process.env.DYNAMIC_CONFIG_ENV_VAR}
+        </Text>
 
         <View className="absolute bottom-8 w-full gap-3">
           <Link href="/(auth)" asChild>
@@ -36,7 +49,8 @@ export default function Preview() {
               </Text>
             </TouchableOpacity>
           </Link>
-        TeT</View>
+          TeT
+        </View>
       </View>
     </View>
   );
