@@ -1,8 +1,9 @@
 // WARNING THIS ISN'T VERSIONED
 import { ExpoConfig, ConfigContext } from '@expo/config';
 
-// TODO: May or May not remove.  Experimenting with l
-export const ENV = {};
+export const ENV = {
+  DYNAMIC_CONFIG_ENV_VAR: 'keep it secret, keep it safe... (dev)'
+};
 
 if (process.env.APP_ENV === 'production') {
   setupProductionEnvironment();
@@ -74,7 +75,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 });
 
 // TODO: Potentially remove having leveraged .env files and eas.json instead
-function setupProductionEnvironment() {}
+function setupProductionEnvironment() {
+  ENV.DYNAMIC_CONFIG_ENV_VAR = 'keep it secret, keep it safe... (prod)'
+}
 
 // TODO: Potentially remove having leveraged .env files and eas.json instead
-function setupStagingEnvironment() {}
+function setupStagingEnvironment() {
+  ENV.DYNAMIC_CONFIG_ENV_VAR = 'keep it secret, keep it safe... (staging)'
+}

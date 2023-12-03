@@ -4,7 +4,7 @@ import { useTheme } from '@/context/Theme';
 import { Link } from 'expo-router';
 import { Text, View, TouchableOpacity } from 'react-native';
 
-export default function Register() {
+export default function Preview() {
   const { isDarkMode } = useTheme();
 
   return (
@@ -13,24 +13,23 @@ export default function Register() {
         <Text className={'text-6xl font-bold text-lightTextTheme dark:text-darkTextTheme'}>
           Examples:
         </Text>
-        <DemoPathAliasText />
-        <View className="my-2 flex-row items-center justify-center">
-          <Text className="text-xl text-lightTextTheme dark:text-darkTextTheme">Using an SVG:</Text>
-          <SVG.Headphones
-            className="mx-4 fill-lightTextTheme dark:fill-darkTextTheme"
-            height={25}
-            width={25}
-          />
-        </View>
-        <Text className="my-4 text-center font-racesport text-lightTextTheme dark:text-darkTextTheme">
-          RaceSport Custom Font
-        </Text>
+
+        {/* EAS Secrets accessed via process.env.*. */}
+        <Text className="underline text-lightTextTheme dark:text-darkTextTheme">Below were added as EAS Secrets:</Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">EXPO_PUBLIC_SECRET: {process.env.EXPO_PUBLIC_SECRET}</Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">SECRET: {process.env.SECRET}</Text>
+
+        <Text className="underline text-lightTextTheme dark:text-darkTextTheme">Below from eas.json:</Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">EXPO_PUBLIC_APP_DISPLAY_NAME: {process.env.EXPO_PUBLIC_APP_DISPLAY_NAME}</Text>
+
+        <Text className="underline text-lightTextTheme dark:text-darkTextTheme">Below accessed through "Constants.expoConfig?.extra" & "app.config.ts":</Text>
+        <Text className="text-lightTextTheme dark:text-darkTextTheme">DYNAMIC_CONFIG_ENV_VAR: {process.env.DYNAMIC_CONFIG_ENV_VAR}</Text>
 
         <View className="absolute bottom-8 w-full gap-3">
-          <Link href="/preview" asChild>
+          <Link href="/(auth)" asChild>
             <TouchableOpacity className="bg-lightTextTheme dark:bg-darkTextTheme">
               <Text className="my-3 text-center font-bold text-darkTextTheme dark:text-lightTextTheme">
-                Go to Env Preview
+                Go to Root Layout
               </Text>
             </TouchableOpacity>
           </Link>
@@ -41,7 +40,7 @@ export default function Register() {
               </Text>
             </TouchableOpacity>
           </Link>
-        </View>
+        TeT</View>
       </View>
     </View>
   );
