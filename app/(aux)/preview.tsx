@@ -1,12 +1,8 @@
-import SVG from '@/assets/svg';
-import DemoPathAliasText from '@/components/atoms/DemoPathAliasText';
 import { useTheme } from '@/context/Theme';
 import { Link } from 'expo-router';
 import { Text, View, TouchableOpacity } from 'react-native';
 
 export default function Preview() {
-  const { isDarkMode } = useTheme();
-
   return (
     <View className={'flex flex-1 flex-col bg-background dark:bg-backgroundDark'}>
       <View className={'flex max-w-screen-lg flex-1 items-center justify-center'}>
