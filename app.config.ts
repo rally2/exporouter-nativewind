@@ -17,7 +17,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   // Spreads static configuration from app.json if we want to seperate out and be more
   // explicit about what should / and should not change
   ...config,
-  name: process.env.EXPO_PUBLIC_APP_DISPLAY_NAME || '(Local) RouterWind',
+  name: process.env.EXPO_PUBLIC_APP_DISPLAY_NAME || '(Dev) RouterWind',
   owner: 'rally2',
   slug: 'routerwind',
   description:
