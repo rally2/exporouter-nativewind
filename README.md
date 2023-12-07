@@ -2,15 +2,25 @@
 
 ## Getting Started:
 
-```
-pnpm install
-```
-
-Don't have `pnpm`? You can install easily with `npm install -g pnpm`.
+// TODO: Add instructions for tweaking pre-defined template values...
 
 ```
-pnpm dev
+npm install
 ```
+
+You can then start the locally running development server with:
+
+```
+npm dev
+```
+for Expo Go|
+
+or
+
+```
+npm dev:client
+```
+for Expo Development Client (assuming you have built and installed the client via the below EAS Build walkthrough)
 
 #### Using WSL2?
 
@@ -81,12 +91,6 @@ Dark Mode compatibility is already configured in this template.  See `context/Th
 ### Favorable Extensions:
 
 See `.vscode/extensions.json` for a list of recommended extensions.
-
-The most important to note is the Headwind extension for Tailwind / Nativewind.
-
-- It provides opinionated sorting of the Tailwind utlities for consistency in the codebase.
-  - See `.vscode/settings.json` for the `headwind.defaultSortOrder` configuration.
-  - For this Expo template it is vital that `dark:*` has been added to the end of the default sort order to ensure toggling dark mode is consistent. If the `dark:*` utility class is auto sorted before the defined `className` color scheme it will not work as expected.
 
 ## EAS (Expo Application Services)
 

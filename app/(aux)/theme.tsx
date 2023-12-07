@@ -17,12 +17,12 @@ export default function Theme() {
       >
         <View className="mx-5 mb-5">
           <Text className="mt-5 text-4xl text-slate-950 dark:text-white">Theme</Text>
-          <Text className="mt-2 text-xl underline dark:text-gray-450 text-slate-400">
+          <Text className="dark:text-gray-450 mt-2 text-xl text-slate-400 underline">
             Color Pallette:
           </Text>
         </View>
 
-        <View className="flex flex-row items-center mx-5 mb-5">
+        <View className="mx-5 mb-5 flex flex-row items-center">
           <Text className="mr-5 text-lg text-slate-900 dark:text-white">
             {colorScheme?.replace(/^\w/, (c) => c.toUpperCase())}
           </Text>
@@ -36,14 +36,14 @@ export default function Theme() {
         </View>
 
         {/* TODO: Create a 'Pallette' component that is made up of 'Swatch' components showing the distinct colors in the Theme. */}
-        <View className="flex-row flex-wrap items-center justify-center flex-1">
-          <View className="flex items-center justify-center w-1/5 mx-5">
-            <View className="flex w-full h-10 mx-2 my-2 rounded-full bg-brandPrimary dark:bg-brandPrimaryDark"></View>
+        <View className="flex-1 flex-row flex-wrap items-center justify-center">
+          <View className="mx-5 flex w-1/5 items-center justify-center">
+            <View className="dark:bg-brandPrimaryDark mx-2 my-2 flex h-10 w-full rounded-full bg-brandPrimary"></View>
             <Text className="text-slate-900 dark:text-white">Brand</Text>
           </View>
 
           <Text
-            className="underline text-slate-900 dark:text-white"
+            className="text-slate-900 underline dark:text-white"
             onPress={() => router.push('/(auth)/')}
           >
             Back to Home

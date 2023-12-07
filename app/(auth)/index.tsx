@@ -8,13 +8,13 @@ export default function Register() {
   const { isDarkMode } = useTheme();
 
   return (
-    <View className={'flex flex-1 p-6 bg-background dark:bg-backgroundDark flex-col'}>
-      <View className={'flex flex-1 justify-center max-w-screen-lg items-center'}>
+    <View className={'flex flex-1 flex-col bg-background dark:bg-backgroundDark'}>
+      <View className={'flex max-w-screen-lg flex-1 items-center justify-center'}>
         <Text className={'text-6xl font-bold text-lightTextTheme dark:text-darkTextTheme'}>
           Examples:
         </Text>
         <DemoPathAliasText />
-        <View className="flex-row items-center justify-center my-2">
+        <View className="my-2 flex-row items-center justify-center">
           <Text className="text-xl text-lightTextTheme dark:text-darkTextTheme">Using an SVG:</Text>
           <SVG.Headphones
             className="mx-4 fill-lightTextTheme dark:fill-darkTextTheme"
@@ -26,13 +26,22 @@ export default function Register() {
           RaceSport Custom Font
         </Text>
 
-        <Link className="absolute" href="/theme" asChild>
-          <TouchableOpacity className="bottom-0 w-full bg-lightTextTheme dark:bg-darkTextTheme">
-            <Text className="my-3 font-bold text-center text-darkTextTheme dark:text-lightTextTheme">
-              Go to Theme
-            </Text>
-          </TouchableOpacity>
-        </Link>
+        <View className="absolute bottom-8 w-full gap-3">
+          <Link href="/preview" asChild>
+            <TouchableOpacity className="bg-lightTextTheme dark:bg-darkTextTheme">
+              <Text className="my-3 text-center font-bold text-darkTextTheme dark:text-lightTextTheme">
+                Go to Env Preview
+              </Text>
+            </TouchableOpacity>
+          </Link>
+          <Link href="/theme" asChild>
+            <TouchableOpacity className="bg-lightTextTheme dark:bg-darkTextTheme">
+              <Text className="my-3 text-center font-bold text-darkTextTheme dark:text-lightTextTheme">
+                Go to Theme
+              </Text>
+            </TouchableOpacity>
+          </Link>
+        </View>
       </View>
     </View>
   );
