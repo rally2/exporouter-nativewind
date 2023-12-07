@@ -2,15 +2,25 @@
 
 ## Getting Started:
 
-```
-pnpm install
-```
-
-Don't have `pnpm`? You can install easily with `npm install -g pnpm`.
+// TODO: Add instructions for tweaking pre-defined template values...
 
 ```
-pnpm dev
+npm install
 ```
+
+You can then start the locally running development server with:
+
+```
+npm dev
+```
+for Expo Go|
+
+or
+
+```
+npm dev:client
+```
+for Expo Development Client (assuming you have built and installed the client via the below EAS Build walkthrough)
 
 #### Using WSL2?
 
