@@ -33,7 +33,7 @@ Comment out `REACT_NATIVE_PACKAGER_HOSTNAME` and add your local IP address shown
 
 - Expo Router V2 via Expo Managed Workflow (Expo SDK 49)
 - Nativewind (TailwindCSS for React Native)
-- Pnpm (package manager)
+- Npm (package manager)
 - Typescript
 
 ## Opinionated Template
