@@ -1,4 +1,4 @@
-import { Text, View, SafeAreaView, Switch } from 'react-native';
+import { Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTheme } from '@/context/Theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
