@@ -49,11 +49,6 @@ export default ThemeProvider;
 export function useTheme() {
   const { colorScheme, isDarkMode, toggleTheme } = useContext(ThemeContext);
 
-  console.log({
-    colorScheme,
-    isDarkMode,
-    toggleTheme
-  });
   return {
     colorScheme,
     isDarkMode,
