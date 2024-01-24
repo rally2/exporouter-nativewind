@@ -44,7 +44,7 @@ export default function Theme() {
 
           <Text
             className="text-slate-900 underline dark:text-white"
-            onPress={() => router.push('/(auth)/')}
+            onPress={() => router.navigate('/(auth)/')}
           >
             Back to Home
           </Text>

@@ -19,14 +19,20 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const { colorScheme, toggleColorScheme } = useColorScheme();
+  const { colorScheme, setColorScheme } = useColorScheme();
   const [isDarkMode, setIsDarkMode] = useState(colorScheme === 'dark');
 
   const toggleTheme = () => {
-    if (colorScheme === 'dark') setIsDarkMode(false);
-    else setIsDarkMode(true);
-
-    toggleColorScheme();
+    if (colorScheme === 'dark') {
+      setIsDarkMode(() => {
+        setColorScheme('light');
+        return false;
+      });
+    } else
+      setIsDarkMode(() => {
+        setColorScheme('dark');
+        return true;
+      });
   };
 
   const value: ThemeContextType = {
@@ -43,6 +49,11 @@ export default ThemeProvider;
 export function useTheme() {
   const { colorScheme, isDarkMode, toggleTheme } = useContext(ThemeContext);
 
+  console.log({
+    colorScheme,
+    isDarkMode,
+    toggleTheme
+  });
   return {
     colorScheme,
     isDarkMode,
