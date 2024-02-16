@@ -1,7 +1,13 @@
 import SVG from '@/assets/svg';
 import { useTheme } from '@/context/Theme';
 import { Link } from 'expo-router';
+import { cssInterop } from 'nativewind';
 import { Text, View, TouchableOpacity } from 'react-native';
+
+// e.g. using the SVG.Headphones component
+cssInterop(SVG.Headphones, {
+  className: "style"
+})
 
 export default function Register() {
   const { isDarkMode } = useTheme();

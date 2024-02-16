@@ -1,6 +1,6 @@
 import ThemeProvider from '@/context/Theme';
 import useCachedResources from '@/hooks/useCachedResources';
-import { Slot } from 'expo-router';
+import { Stack } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 import '../global.css';
@@ -16,8 +16,16 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
       <ThemeProvider>
-        <Slot />
+        <RootLayoutNav />
       </ThemeProvider>
     </SafeAreaProvider>
+  );
+}
+
+function RootLayoutNav() {
+  return (
+    <Stack initialRouteName="(auth)">
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+    </Stack>
   );
 }
