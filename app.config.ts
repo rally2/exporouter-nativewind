@@ -1,5 +1,5 @@
 // WARNING THIS ISN'T VERSIONED
-import { ExpoConfig, ConfigContext } from '@expo/config';
+import { ExpoConfig, ConfigContext } from 'expo/config';
 
 export const ENV = {
   EXPO_PUBLIC_APP_DISPLAY_NAME: process.env.EXPO_PUBLIC_APP_DISPLAY_NAME || '(Dev) RouterWind',
@@ -57,6 +57,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   assetBundlePatterns: ['**/*'],
   ios: {
+    privacyManifests: {},
     bundleIdentifier: ENV.EXPO_PUBLIC_BUNDLE_ID,
     buildNumber: ENV.EXPO_PUBLIC_BUILD_NUMBER,
     supportsTablet: true
@@ -84,7 +85,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     typedRoutes: true,
     tsconfigPaths: true
   },
-  plugins: ['expo-router']
+  plugins: ['expo-router', 'expo-font']
 });
 
 function setupProductionEnvironment() {
