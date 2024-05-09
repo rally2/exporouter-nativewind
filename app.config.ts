@@ -2,20 +2,19 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
 
 export const ENV = {
-  EXPO_PUBLIC_APP_DISPLAY_NAME: process.env.EXPO_PUBLIC_APP_DISPLAY_NAME || '(Dev) RouterWind',
-  EXPO_PUBLIC_PACKAGE: process.env.EXPO_PUBLIC_PACKAGE || 'com.rally2.routerwind.dev',
-  EXPO_PUBLIC_FOREGROUND_IMAGE:
-    process.env.EXPO_PUBLIC_FOREGROUND_IMAGE || './assets/dev/adaptive-icon.dev.png',
-  EXPO_PUBLIC_SCHEME: process.env.EXPO_PUBLIC_SCHEME || 'routerwinddev',
-  EXPO_PUBLIC_BUNDLE_ID: process.env.EXPO_PUBLIC_BUNDLE_ID || 'com.rally2.routerwind.dev',
-  EXPO_PUBLIC_ICON_PATH: process.env.EXPO_PUBLIC_ICON_PATH || './assets/dev/icon.dev.png',
+  APP_ENV: 'development',
+  EXPO_PUBLIC_APP_DISPLAY_NAME: '(Dev) RouterWind',
+  EXPO_PUBLIC_PACKAGE: 'com.rally2.routerwind.dev',
+  EXPO_PUBLIC_ADAPTIVE_BACKGROUND: '#99FFBE',
+  EXPO_PUBLIC_SCHEME: 'routerwinddev',
+  EXPO_PUBLIC_BUNDLE_ID: 'com.rally2.routerwind.dev',
+  EXPO_PUBLIC_ICON_PATH: './assets/dev/icon.dev.png',
 
   // Versioing
-  EXPO_PUBLIC_APP_VERSION: process.env.EXPO_PUBLIC_APP_VERSION || '1.0',
-  EXPO_PUBLIC_BUILD_NUMBER: process.env.EXPO_PUBLIC_BUILD_NUMBER || '1',
-  EXPO_PUBLIC_OTA: process.env.EXPO_PUBLIC_OTA || '0',
-  EXPO_PUBLIC_ANDROID_VERSION_CODE:
-    parseInt(process.env.EXPO_PUBLIC_ANDROID_VERSION_CODE || '') || 1000001
+  EXPO_PUBLIC_APP_VERSION: '1.0',
+  EXPO_PUBLIC_BUILD_NUMBER: '1',
+  EXPO_PUBLIC_OTA: '0',
+  EXPO_PUBLIC_ANDROID_VERSION_CODE: 10000000
 };
 
 if (process.env.APP_ENV === 'production') {
@@ -65,10 +64,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   android: {
     package: ENV.EXPO_PUBLIC_PACKAGE,
     adaptiveIcon: {
-      foregroundImage: ENV.EXPO_PUBLIC_FOREGROUND_IMAGE,
+      foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#1F2937'
     },
-    versionCode: ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE || 1000001
+    versionCode: ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE,
   },
   web: {
     bundler: 'metro',
@@ -89,27 +88,33 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 });
 
 function setupProductionEnvironment() {
+  ENV.APP_ENV = 'production';
   ENV.EXPO_PUBLIC_APP_DISPLAY_NAME = 'RouterWind';
   ENV.EXPO_PUBLIC_PACKAGE = 'com.rally2.routerwind';
-  ENV.EXPO_PUBLIC_FOREGROUND_IMAGE = './assets/adaptive-icon.png';
+  ENV.EXPO_PUBLIC_ADAPTIVE_BACKGROUND = '#1F2937';
   ENV.EXPO_PUBLIC_SCHEME = 'routerwind';
   ENV.EXPO_PUBLIC_BUNDLE_ID = 'com.rally2.routerwind';
   ENV.EXPO_PUBLIC_ICON_PATH = './assets/icon.png';
+
+  // Versioing
   ENV.EXPO_PUBLIC_APP_VERSION = '1.0';
   ENV.EXPO_PUBLIC_BUILD_NUMBER = '1';
   ENV.EXPO_PUBLIC_OTA = '0';
-  ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE = 1000001;
+  ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE = 10000000;
 }
 
 function setupStagingEnvironment() {
-  ENV.EXPO_PUBLIC_APP_DISPLAY_NAME = '(Staging) RouterWind';
+  ENV.APP_ENV = 'staging';
+  ENV.EXPO_PUBLIC_APP_DISPLAY_NAME = '(UAT) RouterWind';
   ENV.EXPO_PUBLIC_PACKAGE = 'com.rally2.routerwind.staging';
-  ENV.EXPO_PUBLIC_FOREGROUND_IMAGE = './assets/staging/adaptive-icon.staging.png';
+  ENV.EXPO_PUBLIC_ADAPTIVE_BACKGROUND = '#fde047';
   ENV.EXPO_PUBLIC_SCHEME = 'routerwindstaging';
   ENV.EXPO_PUBLIC_BUNDLE_ID = 'com.rally2.routerwind.staging';
   ENV.EXPO_PUBLIC_ICON_PATH = './assets/staging/icon.staging.png';
+
+  // Versioing
   ENV.EXPO_PUBLIC_APP_VERSION = '1.0';
-  ENV.EXPO_PUBLIC_BUILD_NUMBER = '3';
+  ENV.EXPO_PUBLIC_BUILD_NUMBER = '1';
   ENV.EXPO_PUBLIC_OTA = '0';
-  ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE = 1000001;
+  ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE = 10000000;
 }
