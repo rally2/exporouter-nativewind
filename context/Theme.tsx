@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react';
 import { Appearance } from 'react-native';
 
 type ThemeContextType = {
-  colorScheme: 'light' | 'dark';
+  colorScheme: 'light' | 'dark' | undefined;
   isDarkMode: boolean;
   toggleTheme: () => void;
 };
@@ -19,20 +19,14 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const { colorScheme, setColorScheme } = useColorScheme();
+  const { colorScheme, toggleColorScheme } = useColorScheme();
   const [isDarkMode, setIsDarkMode] = useState(colorScheme === 'dark');
 
   const toggleTheme = () => {
-    if (colorScheme === 'dark') {
-      setIsDarkMode(() => {
-        setColorScheme('light');
-        return false;
-      });
-    } else
-      setIsDarkMode(() => {
-        setColorScheme('dark');
-        return true;
-      });
+    if (colorScheme === 'dark') setIsDarkMode(false);
+    else setIsDarkMode(true);
+
+    toggleColorScheme();
   };
 
   const value: ThemeContextType = {
