@@ -2,38 +2,47 @@
 
 ## Getting Started:
 
-// TODO: Add instructions for tweaking pre-defined template values...
-
 ```
-npm install
+bun install
 ```
 
-You can then start the locally running development server with:
+<p style="display: flex; align-items: center; justify-content: start; gap: 10px;">
+  <a href="https://bun.sh"><img src="https://user-images.githubusercontent.com/709451/182802334-d9c42afe-f35d-4a7b-86ea-9985f73f20c3.png" alt="Logo" height=25></a>
+  <a href="https://bun.sh/docs" style="font-size: larger; font-weight: bold;">Read the docs →</a>
+</p>
+
+You can download Bun [here](https://bun.sh/docs/installation).
+
+### Start Expo Development Server:
+
+Create a new local development client or get an existing valid one from [expo.dev]("https://expo.dev/accounts/curaleaf)
+
+**[New to Expo?](#eas-build)**
 
 ```
-npm dev
+bun dev:client
 ```
-for Expo Go|
 
-or
+### Environment Variables:
 
-```
-npm dev:client
-```
-for Expo Development Client (assuming you have built and installed the client via the below EAS Build walkthrough)
+Create a `.env.local` file at the root of the codebase.  
+👫 Ask a friend for the .env variables 👫
 
 #### Using WSL2?
+
+_TODO?: This stopped working recently on my (Shane) machine. Potentially add alternate solution for troubleshooting._
 
 Try running `npx expose-wsl@latest` in a terminal on your WSL instance. This circumvents all the hassle of network routing and port forwarding.
 
 After that, create a `.env.local` file and copy the contents of `.env.example`.
 Comment out `REACT_NATIVE_PACKAGER_HOSTNAME` and add your local IP address shown from `expose-wsl`.
 
+
 ## Main Components:
 
-- Expo Router V2 via Expo Managed Workflow (Expo SDK 49)
+- Expo Router V3 via Expo Managed Workflow (Expo SDK 50)
 - Nativewind (TailwindCSS for React Native)
-- Npm (package manager)
+- bun (package manager)
 - Typescript
 
 ## Opinionated Template
@@ -44,23 +53,17 @@ This template DOES make certain opinionated decisions. They are based on common 
 
 Expo provides Typescript support out of the box for the most part. This template will leverage it for any example code.
 
-### SVG Support:
-
-React Native SVG Transformer is a great way to leverage SVG in your Expo project.
-
-See [React Native SVG Transformer](https://github.com/kristerkari/react-native-svg-transformer) on setup instructions. This library already has it configured for Expo.
-
 ### Typed Routes:
 
-The project is using Experimental Typed Routes Support. See [Expo Router: Typed Routes](https://docs.expo.dev/router/reference/typed-routes/)
+Add the following to your project:
 
-### Environment Variables:
+`expo-env.d.ts`:
 
-Environment files are loaded automatically Post-Expo SDK 49. See `.env.example` for base example.
+```
+/// <reference types="expo-router/types" />
 
-You can additionally create `.env.*` for your own purposes. To switch between environment files used you can leverage `NODE_ENV=* ...` in your `package.json` script that is used to start the development server.
-
-To make environment variables accessible using `process.env.*` syntax, you will need to append `EXPO_PUBLIC_` to each variable. See https://docs.expo.dev/guides/environment-variables/ for more info.
+// NOTE: This file should not be edited and should be in your git ignore
+```
 
 ### File Aliasing:
 
@@ -72,21 +75,9 @@ This project has path aliases configured. To extend aliasing capability further,
     }
 ```
 
-The above is configured to alias for any folder in the root of the project. See `app/index.tsx` importing `components/atoms/DemoPathAliasText` as an example. This may seem trivial in this project due to its relatively flat structure, but it really shines as the project grows in size.
-
-### Custom Fonts:
-
-`useCachedResources.ts` is configured to load custom fonts that are located in the `assets/fonts` folder.
-
-See `tailwind.config.js` for the `fontFamily` configuration. You can then see it used in action via `font-racesport`:
-
-```
-<Text className="my-4 font-racesport text-center">RaceSport Custom Font</Text>
-```
-
 ### Dark Mode Configuration:
 
-Dark Mode compatibility is already configured in this template.  See `context/Theme.tsx` for the Theme context configuration.  Go to `(aux)/theme.tsx` to see setup for switching between Light Theme & Dark Theme.  Nativewind handles most of the heavy lifting afterwards as long as you apply the corresponding `dark:*` utility class to your component `className` prop.
+// TODO:
 
 ### Favorable Extensions:
 
@@ -94,9 +85,49 @@ See `.vscode/extensions.json` for a list of recommended extensions.
 
 ## EAS (Expo Application Services)
 
+### Environment Variables
+
+We need the following environment variables to be set in EAS:
+
+**Project Secrets:**
+
 ### EAS Build
 
-// TODO:
+To kick off a build using EAS, you will need to be logged in to your Expo account that is linked to the Curaleaf Organization. It is free to create an account. 👫 Ask a friend for access. 👫
+
+After getting access to the organization... you can run the following commands:
+
+```
+# Installs the latest version of the EAS CLI globally on the computer.
+# YOU DON'T WANT TO INSTALL THIS ON THE PROJECT LEVEL!
+npm install -g eas-cli
+
+# Log in to your Expo account
+eas login
+
+# Sanity Step: Check your login
+eas whoami
+```
+
+An admin or existing EAS user with credentials needs to add you to the provisioning profile if on iOS.
+
+Admin...
+
+1. Run `eas device:create`. Follow prompts and send website QR code to new developer.
+
+New developer...
+
+1. Enable developer mode on your iOS device. May require restart.
+2. Scan setup QR code and follow steps given. May require restart.
+
+You're all set...
+
+```
+# Kick off development build. See package.json for additional build scripts based on need.
+eas:build:dev:ios
+
+# Follow prompts.  You will be asked to select your new device to add to the build profile.
+```
 
 ### EAS Submit
 
