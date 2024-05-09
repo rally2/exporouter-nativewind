@@ -24,7 +24,7 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   return (
-    <Stack initialRouteName="(auth)">
+    <Stack initialRouteName="(auth)" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
     </Stack>
   );
