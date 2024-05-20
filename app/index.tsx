@@ -41,13 +41,6 @@ export default function Theme() {
             <View className="dark:bg-brandPrimaryDark mx-2 my-2 flex h-10 w-full rounded-full bg-brandPrimary"></View>
             <Text className="text-slate-900 dark:text-white">Brand</Text>
           </View>
-
-          <Text
-            className="text-slate-900 underline dark:text-white"
-            onPress={() => router.navigate('/(auth)/')}
-          >
-            Back to Home
-          </Text>
         </View>
       </View>
     </>
