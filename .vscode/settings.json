@@ -11,9 +11,9 @@
   "editor.formatOnSave": true,
   // Optionally, you can set format on save for specific languages only
   "[javascript]": {
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true
   }
 }
