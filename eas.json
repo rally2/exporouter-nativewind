@@ -7,7 +7,7 @@
     "development": {
       "distribution": "internal",
       "developmentClient": true,
-      "channel": "dev.expo49.v1.0",
+      "channel": "dev.expo51.v1.0",
       "env": {
         "APP_ENV": "development"
       }
@@ -20,14 +20,14 @@
     },
     "staging": {
       "distribution": "store",
-      "channel": "staging.expo49.v1.0",
+      "channel": "staging.expo51.v1.0",
       "env": {
         "APP_ENV": "staging"
       }
     },
     "production": {
       "distribution": "store",
-      "channel": "prod.expo49.v1.0",
+      "channel": "prod.expo51.v1.0",
       "env": {
         "APP_ENV": "production"
       }
