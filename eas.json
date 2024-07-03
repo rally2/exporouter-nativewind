@@ -12,6 +12,12 @@
         "APP_ENV": "development"
       }
     },
+    "development:sim": {
+      "extends": "development",
+      "ios": {
+        "simulator": true
+      }
+    },
     "staging": {
       "distribution": "store",
       "channel": "staging.expo49.v1.0",
