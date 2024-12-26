@@ -35,7 +35,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: 'routerwind',
   description:
     'Expo Router & Nativewind Template to quick project spin up.  Configured environments, EAS profiles & more!',
-  privacy: 'hidden',
   platforms: ['android', 'ios', 'web'],
   scheme: ENV.EXPO_PUBLIC_SCHEME,
   version: ENV.EXPO_PUBLIC_APP_VERSION,
@@ -67,7 +66,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#1F2937'
     },
-    versionCode: ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE,
+    versionCode: ENV.EXPO_PUBLIC_ANDROID_VERSION_CODE
   },
   web: {
     bundler: 'metro',
@@ -84,7 +83,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     typedRoutes: true,
     tsconfigPaths: true
   },
-  plugins: ['expo-router', 'expo-font']
+  plugins: ['expo-router', 'expo-font'],
 });
 
 function setupProductionEnvironment() {
