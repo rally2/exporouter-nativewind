@@ -4,7 +4,7 @@ Docs of workarounds, patches & relevant "to knows".
 
 ## Package.json Configs
 
-The following `expo.doctor.reactNativeDirectoryCheck.listUnknownPackages` was added to `package.json` to address the following:
+The following `expo.doctor.reactNativeDirectoryCheck.exclude": ["tailwindcss"]` was added to `package.json` to address the following:
 
 ```
 The following issues were found when validating your dependencies against React Native Directory:
