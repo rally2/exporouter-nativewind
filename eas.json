@@ -1,13 +1,22 @@
 {
   "cli": {
     "version": ">= 0.52.0",
-    "requireCommit": true
+    "requireCommit": true,
+    "appVersionSource": "remote"
   },
   "build": {
+    "base": {
+      "ios": {
+        "autoIncrement": "buildNumber"
+      },
+      "android": {
+        "autoIncrement": "versionCode"
+      }
+    },
     "development": {
       "distribution": "internal",
       "developmentClient": true,
-      "channel": "dev.expo51.v1.0",
+      "channel": "development",
       "env": {
         "APP_ENV": "development"
       }
@@ -19,15 +28,17 @@
       }
     },
     "staging": {
+      "extends": "base",
       "distribution": "store",
-      "channel": "staging.expo51.v1.0",
+      "channel": "staging",
       "env": {
         "APP_ENV": "staging"
       }
     },
     "production": {
+      "extends": "base",
       "distribution": "store",
-      "channel": "prod.expo51.v1.0",
+      "channel": "production",
       "env": {
         "APP_ENV": "production"
       }
