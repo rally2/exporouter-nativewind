@@ -12,20 +12,14 @@ export default function Theme() {
   return (
     <>
       <View
-        className="flex-1 bg-background dark:bg-backgroundDark"
+        className="flex-1 bg-Neutral-White dark:bg-Neutral-Black"
         style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
       >
         <View className="mx-5 mb-5">
           <Text className="mt-5 text-4xl text-slate-950 dark:text-white">Theme</Text>
-          <Text className="dark:text-gray-450 mt-2 text-xl text-slate-400 underline">
-            Color Pallette:
-          </Text>
         </View>
 
         <View className="mx-5 mb-5 flex flex-row items-center">
-          <Text className="mr-5 text-lg text-slate-900 dark:text-white">
-            {colorScheme?.replace(/^\w/, (c) => c.toUpperCase())}
-          </Text>
           <NativeSwitch
             className="mr-5"
             onValueChange={toggleTheme}
@@ -33,14 +27,6 @@ export default function Theme() {
             trackColor={{ false: '#767577', true: '#81b0ff' }}
           />
           <Text className="text-lg">{isDarkMode ? '🌙' : '🌞'}</Text>
-        </View>
-
-        {/* TODO: Create a 'Pallette' component that is made up of 'Swatch' components showing the distinct colors in the Theme. */}
-        <View className="flex-1 flex-row flex-wrap items-center justify-center">
-          <View className="mx-5 flex w-1/5 items-center justify-center">
-            <View className="dark:bg-brandPrimaryDark mx-2 my-2 flex h-10 w-full rounded-full bg-brandPrimary"></View>
-            <Text className="text-slate-900 dark:text-white">Brand</Text>
-          </View>
         </View>
       </View>
     </>

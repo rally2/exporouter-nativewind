@@ -20,7 +20,7 @@ Create a new local development client or get an existing valid one from [expo.de
 **[New to Expo?](#eas-build)**
 
 ```
-bun dev:client
+bun dev
 ```
 
 ### Environment Variables:
@@ -30,7 +30,7 @@ Create a `.env.local` file at the root of the codebase.
 
 ## Main Components:
 
-- Expo Router V3 via Expo Managed Workflow (Expo SDK 50)
+- Expo Router V4 & Expo SDK 52
 - Nativewind (TailwindCSS for React Native)
 - bun (package manager)
 - Typescript
