@@ -8,6 +8,11 @@ import '../global.css';
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
+let Layout = RootLayoutNav;
+if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true') {
+  Layout = require('@/.storybook').default;
+}
+
 export default function RootLayout() {
   const { appIsReady, onLayoutRootView } = useCachedResources();
 
@@ -16,7 +21,7 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
       <ThemeProvider>
-        <RootLayoutNav />
+        <Layout />
       </ThemeProvider>
     </SafeAreaProvider>
   );
