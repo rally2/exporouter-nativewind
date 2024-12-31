@@ -25,7 +25,7 @@ bun dev
 
 ### Environment Variables:
 
-Create a `.env.local` file at the root of the codebase.  
+Create a `.env.dev` file at the root of the codebase.  
 👫 Ask a friend for the .env variables 👫
 
 ## Main Components:
@@ -34,3 +34,9 @@ Create a `.env.local` file at the root of the codebase.
 - Nativewind (TailwindCSS for React Native)
 - bun (package manager)
 - Typescript
+  
+## Storybook
+
+Storybook gives a VDD (Visual Driven Development) approach and a convenient sandbox to build components in isolation.  See `components/Button` for an example. 
+
+To enable Storybook canvas, set `EXPO_PUBLIC_STORYBOOK_ENABLED=true` in the `.env.dev`
