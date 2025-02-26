@@ -14,6 +14,7 @@
       }
     },
     "development": {
+      "environment": "development",
       "distribution": "internal",
       "developmentClient": true,
       "channel": "development",
@@ -28,6 +29,7 @@
       }
     },
     "staging": {
+      "environment": "preview",
       "extends": "base",
       "distribution": "store",
       "channel": "staging",
@@ -36,6 +38,7 @@
       }
     },
     "production": {
+      "environment": "production",
       "extends": "base",
       "distribution": "store",
       "channel": "production",
