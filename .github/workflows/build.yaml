@@ -1,0 +1,55 @@
+name: "Create environment specific native binaries"
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        default: 'staging'
+        required: true
+        description: Environment
+        options:
+          - staging
+          - production
+      platform:
+        type: choice
+        default: ios
+        required: true
+        description: Platform to build binary for
+        options:
+          - ios
+          - android
+          - both
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: 🏗 Setup Expo and EAS
+        uses: expo/expo-github-action@v7
+        with:
+          expo-version: latest
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      # Generates iOS Native binary and submits to App Store based on bundle identifier being used 
+      - name: 🚀 Generate iOS Native Binaries for ${{ inputs.env }}
+        if: ${{ inputs.platform == 'ios' || inputs.platform == 'both' }}
+        run: eas build --profile=${{ inputs.env }} --platform=${{ inputs.platform }} --non-interactive --auto-submit
+
+      # TODO: Fix uploading build directly Google Play Store with EAS Submit
+      # For now, you can just grab the binary from expo.dev dashboard and submit manually
+      - name: 🚀 Generate Android Native Binaries for ${{ inputs.env }}
+        if: ${{ inputs.platform == 'android' || inputs.platform == 'both' }}
+        run: eas build --profile=${{ inputs.env }} --platform=${{ inputs.platform }} --non-interactive
