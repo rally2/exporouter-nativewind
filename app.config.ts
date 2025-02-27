@@ -51,7 +51,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ios: {
     privacyManifests: {},
     bundleIdentifier: ENV.EXPO_PUBLIC_BUNDLE_ID,
-    supportsTablet: true
+    supportsTablet: true,
+    infoPlist: {
+      // Learn more: https://developer.apple.com/documentation/Security/complying-with-encryption-export-regulations
+      ITSAppUsesNonExemptEncryption: false
+    }
   },
   android: {
     package: ENV.EXPO_PUBLIC_PACKAGE,
