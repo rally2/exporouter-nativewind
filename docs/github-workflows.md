@@ -22,3 +22,7 @@ The EXPO_TOKEN needs to be added to your GitHub repository's secrets. Here's how
    - Click "Add secret"
 
 Once you've added the secret, your GitHub Action will be able to access it using ${{ secrets.EXPO_TOKEN }} as shown in your workflow file.
+
+## Triggering Workflows
+
+You can trigger the workflows by going to GitHub Repository -> Actions -> Run Workflow -> Select the workflow you want to trigger.
