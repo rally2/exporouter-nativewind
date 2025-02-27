@@ -1,0 +1,47 @@
+name: 'Release Over the Air Update'
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Update message'
+        required: true
+      env:
+        type: choice
+        default: 'staging'
+        required: true
+        description: Environment
+        options:
+          - staging
+          - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.env }}
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: bun
+
+      - name: 🏗 Setup Expo and EAS
+        uses: expo/expo-github-action@v8
+        with:
+          expo-version: latest
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: bun install
+
+      - name: 🚀 Update Staging App
+        if: ${{ inputs.env == 'staging' }}
+        run: APP_ENV=staging eas update --branch staging --message "${{ inputs.message }}" --environment=preview
+
+      - name: 🚀 Update Prod App
+        if: ${{ inputs.env == 'production' }}
+        run: APP_ENV=production eas update --branch production --message "${{ inputs.message }}" --environment=production
