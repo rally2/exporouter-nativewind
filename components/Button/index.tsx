@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, View } from 'react-native';
-import Typography from '../Typography';
+import Typography from '../atoms/Typography';
 import { tv, VariantProps } from 'tailwind-variants';
 
 // e.g. Button with variants using Tailwind Variants.

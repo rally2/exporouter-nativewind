@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextProps } from 'react-native';
+import { Text, TextProps } from 'react-native';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 /**
