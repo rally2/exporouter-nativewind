@@ -13,7 +13,7 @@ type Props = {
 export const variants = tv({
   base: 'fill-Neutral-Grey-60',
   variants: {
-    focused: { true: 'fill-Primary-70' }
+    focused: { true: 'fill-Neutral-Grey-100' }
   }
 });
 

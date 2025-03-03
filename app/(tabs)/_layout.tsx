@@ -29,7 +29,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="index"
         options={{
           tabBarIcon: ({ focused }) => (
             <TabBarIcon
@@ -39,7 +39,8 @@ export default function TabLayout() {
               height={24}
             />
           ),
-          headerShown: false
+          headerShown: false,
+          tabBarLabel: 'Home'
         }}
       />
 
@@ -55,7 +56,8 @@ export default function TabLayout() {
             />
           ),
           tabBarBadgeStyle: styles.tabBarBadgeStyle,
-          headerShown: false
+          headerShown: false,
+          tabBarLabel: 'Likes'
         }}
       />
 
@@ -73,7 +75,8 @@ export default function TabLayout() {
           headerTitle: () => <HeaderScreenTitle title="Cart" />,
           headerTitleAlign: 'center',
           tabBarBadgeStyle: styles.tabBarBadgeStyle,
-          headerShown: false
+          headerShown: false,
+          tabBarLabel: 'Cart'
         }}
       />
 
@@ -91,7 +94,8 @@ export default function TabLayout() {
           headerTitle: () => <HeaderScreenTitle title="Inbox" />,
           headerTitleAlign: 'center',
           tabBarBadgeStyle: styles.tabBarBadgeStyle,
-          headerShown: false
+          headerShown: false,
+          tabBarLabel: 'Alerts'
         }}
       />
 
@@ -108,7 +112,8 @@ export default function TabLayout() {
           ),
           tabBarBadgeStyle: styles.tabBarBadgeStyle,
           tabBarBadge: undefined,
-          headerShown: false
+          headerShown: false,
+          tabBarLabel: 'Profile'
         }}
       />
     </Tabs>
@@ -136,9 +141,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0,
     paddingHorizontal: 8
   },
-  defaultHeaderStyles: {
-    backgroundColor: tailwindConfig.theme.colors['Primary-70']
-  }
+  defaultHeaderStyles: {}
 });
 
 export const defaultHeaderStyle = styles.defaultHeaderStyles;
